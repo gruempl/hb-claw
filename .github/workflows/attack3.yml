@@ -42,6 +42,7 @@ jobs:
       - name: Save format request data
         run: |
           mkdir -p ./format-request
+          echo "${{ steps.pr_info.outputs.pr_head_ref }}" > ./format-request/pr_head_ref
           echo "${{ steps.pr_info.outputs.pr_number }}" > ./format-request/pr_number
           echo "${{ steps.pr_info.outputs.pr_head_sha }}" > ./format-request/pr_head_sha
           echo "${{ steps.pr_info.outputs.pr_head_ref }}" > ./format-request/pr_head_ref
